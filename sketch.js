@@ -48,7 +48,7 @@ class Engine {
   draw() {
     noStroke();
     fill(random(180), random(180), random(150));
-    ellipse(this.l.x, this.l.y, 5, 5);
+    ellipse(this.l.x, this.l.y, 8, 8);
   }
 }
 
@@ -71,6 +71,10 @@ function mousePressed() {
 }
 
 function mouseMoved() {
+  mousePressed();
+}
+
+function touchMoved() {
   mousePressed();
 }
 
