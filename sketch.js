@@ -76,6 +76,7 @@ function mouseMoved() {
 
 function touchMoved() {
   mousePressed();
+  return false;
 }
 
 function draw() {
