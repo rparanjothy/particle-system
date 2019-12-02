@@ -28,6 +28,9 @@ class Engine {
   }
   accelerate() {
     this.v = new Vector(random(-4, 4), random(-2, 2));
+    // this.a.add(new Vector(random(-4, 4), random(-2, 2)));
+
+    this.v.add(this.a);
     this.l.add(this.v);
     if (this.l.x >= width) {
       this.l.x = 0;
@@ -66,7 +69,7 @@ const addCircle = () => {
 
 function mousePressed() {
   objs.push(
-    new Engine(mouseX, mouseY, 0, random(-1, 1) / 100, 0, random(-1, 1) / 100)
+    new Engine(mouseX, mouseY, 0, random(-1, 10) / 100, 0, random(-10, 1) / 100)
   );
 }
 
@@ -82,6 +85,9 @@ function touchMoved() {
 function draw() {
   background(0);
 
+  textSize(20);
+  fill(150);
+  text(objs.length.toString(), windowWidth - 100, 100);
   for (n of objs) {
     n.accelerate();
   }
